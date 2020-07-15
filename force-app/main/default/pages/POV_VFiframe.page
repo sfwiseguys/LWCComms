@@ -1,0 +1,38 @@
+<apex:page lightningStylesheets="true" controller="POV_Controller">
+<apex:slds />
+<div class="slds-grid slds-gutters slds-p-around_medium">
+<div class="slds-col">
+<p>Message To Send to Parent LWC</p>
+    <input type="text" id="vfMessage" />
+    <br/> 
+    <button class="slds-button slds-button_outline-brand" onclick="firetoLWC()">Send to LWC</button> 
+    <br/>
+</div>
+<div class="slds-col">
+<p>Recieve Messages</p>
+    <br/>
+    <p>Message Received from Parent LWC :</p>
+    <div id="output" class="slds-box"/>
+</div>
+</div>
+
+
+<script>
+    var  lexOrigin='{!lexOrigin}';
+
+    /*************** EventListener to GET response from LWC ***************/
+    window.addEventListener("message", function (event) {
+        if(event.origin === lexOrigin){
+        var receivedfromLWC = event.data;
+        var output = document.querySelector("#output");
+        output.innerHTML = receivedfromLWC;
+        }
+    });
+    
+    
+    function firetoLWC(){
+        var message = document.getElementById('vfMessage').value;
+        window.parent.postMessage(message, lexOrigin);
+    }
+</script>
+</apex:page>

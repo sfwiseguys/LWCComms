@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>For the LWC iframe POV experimentation</description>
+    <label>POV VF iframe</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>11</minorNumber>
+        <namespace>th_con_app</namespace>
+    </packageVersions>
+</ApexPage>
