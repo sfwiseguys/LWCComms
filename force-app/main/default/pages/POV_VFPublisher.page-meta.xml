@@ -3,11 +3,6 @@
     <apiVersion>48.0</apiVersion>
     <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <description>For the LMS POV experimentation - Publisher</description>
+    <description>For the LMS communication experimentation - Publisher</description>
     <label>POV VF Publisher</label>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>11</minorNumber>
-        <namespace>th_con_app</namespace>
-    </packageVersions>
 </ApexPage>

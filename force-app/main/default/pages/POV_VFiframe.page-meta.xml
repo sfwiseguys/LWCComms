@@ -3,11 +3,6 @@
     <apiVersion>48.0</apiVersion>
     <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <description>For the LWC iframe POV experimentation</description>
+    <description>For the LWC iframe POV communication</description>
     <label>POV VF iframe</label>
-    <packageVersions>
-        <majorNumber>1</majorNumber>
-        <minorNumber>11</minorNumber>
-        <namespace>th_con_app</namespace>
-    </packageVersions>
 </ApexPage>
