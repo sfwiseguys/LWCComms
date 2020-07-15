@@ -12,6 +12,7 @@
         var POVMC = "{!$MessageChannel.POVMessageChannel__c}";
         
         
+       // PUBLISH 
        function publishMessage() {
             const payload = {
                 source: "Visualforce",

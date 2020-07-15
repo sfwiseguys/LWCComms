@@ -18,6 +18,8 @@
 
 
 <script>
+
+    // Obtain Dynamic LEX Origin URL from Apex getter variable
     var  lexOrigin='{!lexOrigin}';
 
     /*************** EventListener to GET response from LWC ***************/
@@ -30,6 +32,8 @@
     });
     
     
+    
+    /*************** Function to Fire PostMessage Event to parent LWC ***************/
     function firetoLWC(){
         var message = document.getElementById('vfMessage').value;
         window.parent.postMessage(message, lexOrigin);

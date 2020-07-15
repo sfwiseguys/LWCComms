@@ -1,3 +1,4 @@
+/******* Controller Class for LWC to get Vf origin and for LWC to fire a Platform Event *******/
 public with sharing class POV_Controller {
 
 
@@ -6,6 +7,7 @@ public with sharing class POV_Controller {
 
 
 
+  /******* Method to publish a Platform Event  *******/
   @AuraEnabled
   public static void publishEvent(String message) {
     POV_Platform_Event__e event = new POV_Platform_Event__e(
@@ -27,10 +29,13 @@ public with sharing class POV_Controller {
 
 
 
+
+  /******* Method to dynamically obtain VF origin for the iframe VF page in LWC  *******/
   @AuraEnabled(cacheable = true)
   public static string getVFOrigin() {
     string vfOrigin = '';
-    string baseURL = URL.getOrgDomainUrl().toExternalForm(); // Expected Format = https://domain.my.salesforce.com
+    string baseURL = URL.getOrgDomainUrl().toExternalForm();
+    // Expected Format = https://domain.my.salesforce.com
 
     Organization oOrg = [SELECT InstanceName, IsSandbox FROM Organization LIMIT 1];
     if (oOrg.IsSandbox) {
