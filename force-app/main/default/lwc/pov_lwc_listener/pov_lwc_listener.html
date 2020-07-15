@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="LWC Listener" icon-name="custom:custom9">
+        <div class="slds-m-around_medium">
+            <p>Subscribed: {subscribeStatus}</p>
+            <br>
+            <lightning-button label="Subscribe" onclick={handleSubscribe}></lightning-button>
+            <lightning-button label="Unsubscribe" onclick={handleUnsubscribe}></lightning-button>
+            <p> Message Received = </p>
+            <div if:true={receivedMessage} class="slds-box">
+                <lightning-formatted-text value={receivedMessage}></lightning-formatted-text>
+            </div>
+        </div>
+    </lightning-card>
+</template>

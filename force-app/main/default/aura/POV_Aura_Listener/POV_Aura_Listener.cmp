@@ -1,0 +1,17 @@
+<aura:component description="testMessageAura" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute type="String" name="receivedMessage" />
+    <lightning:messageChannel type="POVMessageChannel__c" aura:id="POVMC" onMessage="{!c.handleReceiveMessage}"
+        scope="APPLICATION" />
+
+    <lightning:card title="Aura Listener" iconName="custom:custom30">
+        <div class="slds-m-around_medium">
+            <p>Channel Subscribed.  Received Message = </p>
+            <br/>
+            <br/>
+            <div class="slds-box">
+                <lightning:formattedText value="{!v.receivedMessage}" />
+            </div>
+        </div>
+        <br/>
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,25 @@
+<apex:page lightningStylesheets="true">
+   <!-- <h4>VF Page Publisher</h4> -->
+    <div>
+        <p>Message To Send</p>
+        <input type="text" id="vfMessage" />
+        <br/> 
+        <button class="slds-button" onclick="publishMessage()">Publish</button> 
+        <br/> 
+    </div>
+    <script> 
+        // Load the MessageChannel token in a variable
+        var POVMC = "{!$MessageChannel.POVMessageChannel__c}";
+        
+        
+       // PUBLISH 
+       function publishMessage() {
+            const payload = {
+                source: "Visualforce",
+                messageBody: document.getElementById('vfMessage').value
+            };
+            sforce.one.publish(POVMC, payload);
+        }
+        
+    </script>
+</apex:page>

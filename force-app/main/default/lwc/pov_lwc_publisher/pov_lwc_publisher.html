@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="LWC Publisher" icon-name="custom:custom9">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Message To Send" type="text" value={msg} onchange={handleChange}></lightning-input>
+            <lightning-button label="Publish" variant="brand" onclick={handlePublish}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

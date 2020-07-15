@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="LWC with VF in iFrame" icon-name="custom:custom9">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-small">
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <div class="slds-m-around_medium">
+                    <lightning-input label="Message to send to VF" type="text" value={msg} onchange={handleChange}>
+                    </lightning-input>
+                    <lightning-button label="Send to VF" variant="brand" onclick={handleFiretoVF}></lightning-button>
+                </div>
+
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <template if:true={receivedMessage}>
+                    <p> Message Received from VF = </p>
+                    <div class="slds-box">
+                        <lightning-formatted-text value={receivedMessage}></lightning-formatted-text>
+                    </div>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-small">
+                <p>VF page below in an iFrame</p>
+                <iframe height="400px" width="100%" src="/apex/POV_VFiframe"></iframe>
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </lightning-card>
+</template>
