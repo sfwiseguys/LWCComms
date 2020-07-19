@@ -2,9 +2,12 @@
 public with sharing class POV_Controller {
   
   
+  // VF Getter Variable for dynamic LEX Origin
   public string lexOrigin {get{ return URL.getOrgDomainUrl().toExternalForm().split('.my.')[0]+'.lightning.force.com';} set;}
   // Expected Format = https://domain.lightning.salesforce.com
   
+  
+  /******* Method to publish a Platform Event  *******/
   @AuraEnabled
     public static void publishEvent(String message) {
     POV_Platform_Event__e event = new POV_Platform_Event__e(Message__c = message);
@@ -20,8 +23,8 @@ public with sharing class POV_Controller {
 
 
 
-  /******* Method to dynamically obtain VF origin for the iframe VF page in LWC  *******/
-  @AuraEnabled(cacheable=true)
+   /******* Method to dynamically obtain VF origin for the iframe VF page in LWC  *******/
+   @AuraEnabled(cacheable=true)
     public static string getVFOrigin() {
       string vfOrigin ='';
       string baseURL = URL.getOrgDomainUrl().toExternalForm(); // Expected Format = https://domain.my.salesforce.com
