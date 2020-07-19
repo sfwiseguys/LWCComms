@@ -14,7 +14,8 @@ export default class pov_lwc_listener extends LightningElement {
     @track receivedMessage = '';
     @track subscription = null;
 
-    // NOT Using Wired message Context. using createMessageContext,releaseMessageContext to subscribe unsubscribe
+    // NOT Using Wired MessageContext.
+    // Instead using createMessageContext,releaseMessageContext to subscribe unsubscribe
     // @wire(MessageContext)
     // context;
 

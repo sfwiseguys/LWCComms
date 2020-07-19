@@ -1,32 +1,32 @@
 <apex:page lightningStylesheets="true">
-   <!-- <h4>VF Page Listener</h4> -->
+    <!-- <h4>VF Page Listener</h4> -->
     <div>
         <p>Subscribe To Recieve Messages</p>
-        <button onclick="subscribeMC()">Subscribe</button> 
-        <button onclick="unsubscribeMC()">Unsubscribe</button> 
-        <br/> 
-        <p>Message Received :</p>
-        <div id="output" class="slds-box"/>
+        <button onclick="subscribeMC()">Subscribe</button>
+        <button onclick="unsubscribeMC()">Unsubscribe</button>
+        <br/>
+        <p>Received Message =</p>
+        <div id="output" style="padding: 1rem;border-radius: .25rem;border: 1px solid #dddbda" />
     </div>
     <script> 
         // Load the MessageChannel token in a variable
         var POVMC = "{!$MessageChannel.POVMessageChannel__c}";
         var subscriptionToMC;
-        
-        
+
+
         // SUBSCRIBE
         function subscribeMC() {
             if (!subscriptionToMC) {
-                subscriptionToMC = sforce.one.subscribe(POVMC, onMCPublished,{ scope: "APPLICATION" });
+                subscriptionToMC = sforce.one.subscribe(POVMC, onMCPublished, { scope: "APPLICATION" });
             }
         }
-        
+
         // Handle Message upon revceiving to the subscription
         function onMCPublished(message) {
             var textArea = document.querySelector("#output");
-            textArea.innerHTML = message ? 'Message: ' + message.messageBody + '\n \n From: ' + message.source : 'no message payload';
-        } 
-        
+            textArea.innerHTML = message ? 'Message: ' + message.messageBody + '\n \n Sent From: ' + message.source : 'no message payload';
+        }
+
         // UNSUBSCRIBE
         function unsubscribeMC() {
             if (subscriptionToMC) {
@@ -34,7 +34,5 @@
                 subscriptionToMC = null;
             }
         }
-        
-        
     </script>
 </apex:page>
