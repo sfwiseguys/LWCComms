@@ -10,15 +10,15 @@ The App in this Repo demonstrates Communication scenarios  -
 
 :zap: Using Lightning Message Service between LWC, Aura & VF :zap:
 
-    ![](/images/LMS-GIF.gif)
+    ![](LMS-GIF.gif)
 
 :sparkles: Firing Platform Events between LWCs :sparkles:
 
-    ![](/images/EMP-API-GIF.gif)
+    ![](EMP-API-GIF.gif)
 
 :star: LWC containing VF in an iframe :star:
 
-    ![](/images/VFiFrame-GIF.gif)
+    ![](VFiFrame-GIF.gif)
 
 ---
 
