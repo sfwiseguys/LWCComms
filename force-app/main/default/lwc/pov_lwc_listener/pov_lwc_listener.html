@@ -5,7 +5,7 @@
             <br>
             <lightning-button label="Subscribe" onclick={handleSubscribe}></lightning-button>
             <lightning-button label="Unsubscribe" onclick={handleUnsubscribe}></lightning-button>
-            <p> Message Received = </p>
+            <p>Received Message = </p>
             <div if:true={receivedMessage} class="slds-box">
                 <lightning-formatted-text value={receivedMessage}></lightning-formatted-text>
             </div>

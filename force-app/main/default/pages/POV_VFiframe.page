@@ -1,42 +1,38 @@
 <apex:page lightningStylesheets="true" controller="POV_Controller">
-<apex:slds />
-<div class="slds-grid slds-gutters slds-p-around_medium">
-<div class="slds-col">
-<p>Message To Send to Parent LWC</p>
-    <input type="text" id="vfMessage" />
-    <br/> 
-    <button class="slds-button slds-button_outline-brand" onclick="firetoLWC()">Send to LWC</button> 
-    <br/>
-</div>
-<div class="slds-col">
-<p>Recieve Messages</p>
-    <br/>
-    <p>Message Received from Parent LWC :</p>
-    <div id="output" class="slds-box"/>
-</div>
-</div>
+    <apex:slds />
+    <div class="slds-grid slds-gutters slds-p-around_medium">
+        <div class="slds-col">
+            <p>Message To Send to Parent LWC</p>
+            <input type="text" id="vfMessage" />
+            <br/>
+            <button class="slds-button slds-button_outline-brand" onclick="firetoLWC()">Send to LWC</button>
+            <br/>
+        </div>
+        <div class="slds-col">
+            <p>Message Received from Parent LWC</p>
+            <div id="output" class="slds-box" />
+        </div>
+    </div>
 
 
-<script>
+    <script>
+         // Obtaining LEX origin URL from Apex to fire to parent & match the source upon receiving message
+         var lexOrigin = '{!lexOrigin}';
 
-    // Obtain Dynamic LEX Origin URL from Apex getter variable
-    var  lexOrigin='{!lexOrigin}';
+        /*************** EventListener to GET response from LWC ***************/
+        window.addEventListener("message", function (event) {
+            if (event.origin === lexOrigin) {
+                var receivedfromLWC = event.data;
+                var output = document.querySelector("#output");
+                output.innerHTML = receivedfromLWC;
+            }
+        });
 
-    /*************** EventListener to GET response from LWC ***************/
-    window.addEventListener("message", function (event) {
-        if(event.origin === lexOrigin){
-        var receivedfromLWC = event.data;
-        var output = document.querySelector("#output");
-        output.innerHTML = receivedfromLWC;
+
+        /*************** Function to Fire PostMessage Event to parent LWC ***************/
+        function firetoLWC() {
+            var message = document.getElementById('vfMessage').value;
+            window.parent.postMessage(message, lexOrigin);
         }
-    });
-    
-    
-    
-    /*************** Function to Fire PostMessage Event to parent LWC ***************/
-    function firetoLWC(){
-        var message = document.getElementById('vfMessage').value;
-        window.parent.postMessage(message, lexOrigin);
-    }
-</script>
+    </script>
 </apex:page>

@@ -5,9 +5,11 @@
 
     <lightning:card title="Aura Listener" iconName="custom:custom30">
         <div class="slds-m-around_medium">
-            <p>Channel Subscribed.  Received Message = </p>
+            <p>Channel is Subscribed.</p>
             <br/>
             <br/>
+            <br/>
+            <p>Received Message = </p>
             <div class="slds-box">
                 <lightning:formattedText value="{!v.receivedMessage}" />
             </div>
