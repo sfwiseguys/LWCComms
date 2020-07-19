@@ -1,24 +1,24 @@
 # LWC Communications
 The App in this Repo demonstrates Communication scenarios  - 
-Using Lightning Message Service between LWC, Aura Component & VF page publishers and listeners
-Firing Platform Events between LWCs, and
-LWC containing VF in an iframe
+* Using Lightning Message Service between LWC, Aura Component & VF page publishers and listeners
+* Firing Platform Events between LWCs, and
+* LWC containing VF in an iframe
 
 ---
 
 ## Scenarios
 
-1. Using Lightning Message Service between LWC, Aura & VF - 
+:zap: Using Lightning Message Service between LWC, Aura & VF :zap:
 
-![](LMS-GIF.gif)
+    ![](/images/LMS-GIF.gif)
 
-1. Firing Platform Events between LWCs - 
+:sparkles: Firing Platform Events between LWCs :sparkles:
 
-![](EMP-API-GIF.gif)
+    ![](/images/EMP-API-GIF.gif)
 
-1. LWC containing VF in an iframe - 
+:star: LWC containing VF in an iframe :star:
 
-![](VFiFrame-GIF.gif)
+    ![](/images/VFiFrame-GIF.gif)
 
 ---
 
@@ -52,15 +52,15 @@ Kindly follow these steps to deploy the contents of this repository in your Deve
 
 1. In App Launcher, select the **LWC Comms** app to view the Three Tabs - 
 
-LMS POV - to see Lightning Message Service scenarios
-EMP API POV - to see LWCs listening to a Platform Event Channel
-POV LWC to VF in iFrame - LWC containing VF in an iframe, communicating to each other
+* LMS POV - to see Lightning Message Service scenarios
+* EMP API POV - to see LWCs listening to a Platform Event Channel
+* POV LWC to VF in iFrame - LWC containing VF in an iframe, communicating to each other
 
 ---
 
 ## Authors
 
-* **Waseem Ali Sabeel** - *Initial components* - [@WaseemAliSabeel](https://github.com/WaseemAliSabeel)
+* **Waseem Ali Sabeel** - *Initial components* - [@WaseemAliSabeel](https://github.com/WaseemAliSabeel) :cowboy_hat_face:
 
 ---
 
@@ -68,7 +68,7 @@ POV LWC to VF in iFrame - LWC containing VF in an iframe, communicating to each 
 
 Reach out at one of the following places!
 
-- Website at [sfwiseguys.wordpress.com](https://sfwiseguys.wordpress.com)
+- Website at [sfwiseguys.wordpress.com](https://sfwiseguys.wordpress.com) :tophat:
 - Twitter at [@sfwiseguys](https://twitter.com/sfwiseguys)
 
 ---
@@ -78,9 +78,9 @@ Reach out at one of the following places!
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2020 © [sfwiseguys.wordpress.com](https://sfwiseguys.wordpress.com)
+- Copyright 2020 :copyright:  [sfwiseguys.wordpress.com](https://sfwiseguys.wordpress.com) :shipit:
 
 ## Acknowledgements
 
-* Salesforce Blogs on LMS & LWC Communication with Events
-* Salesforce Documentation and Examples
+* :cloud: Salesforce Blogs on LMS & LWC Communication with Events
+* :cloud: Salesforce Documentation and Examples
