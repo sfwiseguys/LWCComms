@@ -10,9 +10,15 @@ LWC containing VF in an iframe
 
 1. Using Lightning Message Service between LWC, Aura & VF - 
 
+![](LMS-GIF.gif)
+
 1. Firing Platform Events between LWCs - 
 
+![](EMP-API-GIF.gif)
+
 1. LWC containing VF in an iframe - 
+
+![](VFiFrame-GIF.gif)
 
 ---
 
