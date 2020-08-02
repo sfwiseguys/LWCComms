@@ -29,14 +29,18 @@ public with sharing class POV_Controller {
       string vfOrigin ='';
       string baseURL = URL.getOrgDomainUrl().toExternalForm(); // Expected Format = https://domain.my.salesforce.com
       
-      Organization oOrg = [SELECT InstanceName,IsSandbox FROM Organization LIMIT 1];
-      if(oOrg.IsSandbox){
-        // Expected Format for Sandbox = https://domain--c.visualforce.com
-        vfOrigin = baseURL.split('.my.')[0]+'--c.'+'visualforce.com'; 
-      } else {
+      Organization oOrg = [SELECT InstanceName, IsSandbox, OrganizationType FROM Organization LIMIT 1];
+      
+      /* Important To dynamically form the distinct ORIGIN URL of Sandbox, Production and a Developer Edition Org*/
+      if(oOrg.OrganizationType == 'Developer Edition'){
         // Expected Format for DE Org = https://domain--c.ap4.visual.force.com
         vfOrigin = baseURL.split('.my.')[0]+'--c.'+oOrg.InstanceName.toLowercase()+'.visual.force.com'; 
+        
+      } else {
+        // Expected Format for Sandbox & Production = https://domain--c.visualforce.com
+        vfOrigin = baseURL.split('.my.')[0]+'--c.'+'visualforce.com'; 
       }       
+      
       return vfOrigin;
     }
 }
