@@ -29,8 +29,13 @@ public with sharing class POV_Controller {
     string vfOrigin = '';
     string baseURL = URL.getOrgDomainUrl().toExternalForm(); // Expected Format = https://domain.my.salesforce.com
 
-    // Expected Format for DE, Sandbox & Production ORgs = https://domain--c.visualforce.com
-    vfOrigin = baseURL.split('.my.')[0] + '--c.' + 'visualforce.com';
+    
+   // Expected Format for DE, Sandbox & Production ORgs = https://domain--c.vf.force.com
+    vfOrigin = baseURL.split('.my.')[0] + '--c.' + 'vf.force.com';
+
+   // Please note the DOMAIN mismatch error in your console logs , if any. 
+   // Earlier it used to end with  --c.visualforce.com
+   // Now, it is found to work successfully when ended with --c.vf.force.com
 
     /* ********* Below odd Discrepancy was found while implementing this in a Trailhead Playground ***********
     Organization oOrg = [SELECT InstanceName, IsSandbox, OrganizationType FROM Organization LIMIT 1];
